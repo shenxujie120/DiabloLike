@@ -439,6 +439,10 @@ PrefabInstance:
       value: 320
       objectReference: {fileID: 0}
     - target: {fileID: 10800004, guid: 9bf881a57b5a8484b8de93dd99355269, type: 3}
+      propertyPath: m_BounceIntensity
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 10800004, guid: 9bf881a57b5a8484b8de93dd99355269, type: 3}
       propertyPath: m_CullingMask.m_Bits
       value: 320
       objectReference: {fileID: 0}
