@@ -10,8 +10,15 @@ using UnityEngine;
 
 public class GameRoot : MonoBehaviour 
 {
+    //定义单例
+    public static GameRoot Instance = null;
+    public LoadingWnd loadingWnd;
+
     private void Start()
     {
+        //加载时设置好
+        Instance = this;
+        DontDestroyOnLoad(this);
         Debug.Log("Game Start...");
 
         Init();
@@ -27,5 +34,7 @@ public class GameRoot : MonoBehaviour
         login.InitSys();
         //进入登录界面并加载UI
         login.EnterLogin();
+        //加载后新场景后GameRoot被卸载掉了，但由于都挂载上面不能卸载
+
     }
 }

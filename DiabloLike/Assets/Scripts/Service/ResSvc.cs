@@ -7,12 +7,20 @@
 *****************************************************/
 
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class ResSvc : MonoBehaviour 
 {
+    public static ResSvc Instance = null;
     public void InitSvc()
     {
+        Instance = this;
         Debug.Log("Init ResSvc...");
+    }
+
+    public void AsyncLoadScene(string SceneName)
+    {
+        SceneManager.LoadSceneAsync(SceneName);
     }
 
 }

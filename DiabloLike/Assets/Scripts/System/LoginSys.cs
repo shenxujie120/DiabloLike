@@ -19,7 +19,9 @@ public class LoginSys : MonoBehaviour
     {
         //TODO
         Debug.Log("EnterLogin Start...");
+        ResSvc.Instance.AsyncLoadScene(Constants.SceneLogin);
         //异步加载场景
+        GameRoot.Instance.loadingWnd.gameObject.SetActive(true);
         //显示加载进度
         //加载完成后显示场景
 
