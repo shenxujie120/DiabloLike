@@ -8,6 +8,7 @@
 
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using System;
 
 public class ResSvc : MonoBehaviour 
 {
@@ -18,9 +19,28 @@ public class ResSvc : MonoBehaviour
         Debug.Log("Init ResSvc...");
     }
 
+    private Action prgCB = null;
     public void AsyncLoadScene(string SceneName)
     {
-        SceneManager.LoadSceneAsync(SceneName);
+        AsyncOperation sceneAsync=SceneManager.LoadSceneAsync(SceneName);
+        prgCB = ()=>{
+            float val = sceneAsync.progress;
+            GameRoot.Instance.loadingWnd.SetProgress(val);
+            if (val == 1)
+            {
+                sceneAsync = null;
+                prgCB = null;
+                GameRoot.Instance.loadingWnd.gameObject.SetActive(false);
+            }
+        };
+    }
+
+    public void Update()
+    {
+        if (prgCB != null)
+        {
+            prgCB();
+        }
     }
 
 }

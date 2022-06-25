@@ -557,13 +557,17 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5932753962059069826, guid: 4e263bb6eff1a3246bca3eb00fbc0408, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7817847990081474257, guid: 4e263bb6eff1a3246bca3eb00fbc0408, type: 3}
       propertyPath: m_Name
       value: LoadingWnd
       objectReference: {fileID: 0}
     - target: {fileID: 7817847990081474257, guid: 4e263bb6eff1a3246bca3eb00fbc0408, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4e263bb6eff1a3246bca3eb00fbc0408, type: 3}
@@ -582,6 +586,32 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 39519a09b6f1dea4bb0e29fca565a845, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  txtTips: {fileID: 0}
+  ImgFg: {fileID: 2174024964590125231}
+  ImgPoint: {fileID: 2174024964590125230}
+  txtPrg: {fileID: 0}
+--- !u!114 &2174024964590125230 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6757687941069655346, guid: 4e263bb6eff1a3246bca3eb00fbc0408, type: 3}
+  m_PrefabInstance: {fileID: 2174024964590125227}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &2174024964590125231 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5232024761219337829, guid: 4e263bb6eff1a3246bca3eb00fbc0408, type: 3}
+  m_PrefabInstance: {fileID: 2174024964590125227}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1001 &2746132347347672512
