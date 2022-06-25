@@ -20,14 +20,23 @@ public class ResSvc : MonoBehaviour
     }
 
     private Action prgCB = null;
-    public void AsyncLoadScene(string SceneName)
+    public void AsyncLoadScene(string SceneName,Action loaded)
     {
+        //加载进度界面
+        GameRoot.Instance.loadingWnd.gameObject.SetActive(true);
+        GameRoot.Instance.loadingWnd.InitWnd();
+
         AsyncOperation sceneAsync=SceneManager.LoadSceneAsync(SceneName);
+        //委托指向
         prgCB = ()=>{
             float val = sceneAsync.progress;
             GameRoot.Instance.loadingWnd.SetProgress(val);
             if (val == 1)
             {
+                if (loaded!=null)
+                {
+                    loaded();
+                }
                 sceneAsync = null;
                 prgCB = null;
                 GameRoot.Instance.loadingWnd.gameObject.SetActive(false);

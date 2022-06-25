@@ -356,6 +356,7 @@
 "Assets/Scripts/Service/ResSvc.cs"
 "Assets/Scripts/System/LoginSys.cs"
 "Assets/Scripts/UIWindow/LoadingWnd.cs"
+"Assets/Scripts/UIWindow/LoginWnd.cs"
 "Assets/TextMesh Pro/Examples & Extras/Scripts/Benchmark01.cs"
 "Assets/TextMesh Pro/Examples & Extras/Scripts/Benchmark01_UGUI.cs"
 "Assets/TextMesh Pro/Examples & Extras/Scripts/Benchmark02.cs"
