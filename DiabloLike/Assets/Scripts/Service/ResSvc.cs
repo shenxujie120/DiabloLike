@@ -9,6 +9,7 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using System;
+using System.Collections.Generic;
 
 public class ResSvc : MonoBehaviour 
 {
@@ -51,10 +52,21 @@ public class ResSvc : MonoBehaviour
         }
     }
 
+    //字典储存缓存
+
+    private Dictionary<string, AudioClip> adDic = new Dictionary<string, AudioClip>();
     public AudioClip AudioLoad(string path,bool Cache=false)
     {
-        Debug.Log(path);
-        AudioClip au = Resources.Load<AudioClip>(path);
+        //Debug.Log(path);
+        AudioClip au = null;
+        if (!adDic.TryGetValue(path,out au))
+        {
+            au = Resources.Load<AudioClip>(path);
+            if (Cache)
+            {
+                adDic.Add(path, au);
+            }
+        }
         return au;
     }
 

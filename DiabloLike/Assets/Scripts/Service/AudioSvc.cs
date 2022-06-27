@@ -24,9 +24,22 @@ public class AudioSvc : MonoBehaviour
     {
         //只加载没播放
         AudioClip audio=ResSvc.Instance.AudioLoad("ResAudio/" + name,true);
-        bgAudio.clip = audio;
-        bgAudio.loop = isLoop;
-        bgAudio.Play();
+        if (bgAudio.clip==null||bgAudio.clip.name!=audio.name)
+        {
+            bgAudio.clip = audio;
+            bgAudio.loop = isLoop;
+            bgAudio.Play();
+        }
+    }
+
+    public void PlayUIAudio(string name)
+    {
+        AudioClip audio = ResSvc.Instance.AudioLoad("ResAudio/" + name, true);
+        if ((uiAudio.clip == null || uiAudio.clip.name != audio.name))
+        {
+            uiAudio.clip = audio;
+            uiAudio.Play();
+        }
     }
 
 }

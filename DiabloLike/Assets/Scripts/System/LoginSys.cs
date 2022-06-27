@@ -8,12 +8,13 @@
 
 using UnityEngine;
 
-public class LoginSys : MonoBehaviour 
+public class LoginSys : SystemRoot
 {
     public static LoginSys Instance = null;
     public LoginWnd loginWnd;
-    public void InitSys()
+    public override void InitSys()
     {
+        base.InitSys();
         Instance = this;
         Debug.Log("InitSys Start...");
     }
@@ -22,9 +23,12 @@ public class LoginSys : MonoBehaviour
     {
         //TODO
         Debug.Log("EnterLogin Start...");
-        ResSvc.Instance.AsyncLoadScene(Constants.SceneLogin, () => {
-            loginWnd.SetWndState();
-            AudioSvc.Instance.PlayBGAudio(Constants.BGLogin);
+            resSvc.AsyncLoadScene(Constants.SceneLogin, () => {
+                loginWnd.SetWndState();
+                audioSvc.PlayBGAudio(Constants.BGLogin);
+                GameRoot.AddTips("Load Done");
+                GameRoot.AddTips("Load DoneX");
+                GameRoot.AddTips("Load DoneXX");
             }
         );
         //异步加载场景

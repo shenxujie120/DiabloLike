@@ -13,6 +13,7 @@ public class GameRoot : MonoBehaviour
     //定义单例
     public static GameRoot Instance = null;
     public LoadingWnd loadingWnd;
+    public DynamicWnd dynamicWnd;
 
     private void Start()
     {
@@ -20,9 +21,20 @@ public class GameRoot : MonoBehaviour
         Instance = this;
         DontDestroyOnLoad(this);
         Debug.Log("Game Start...");
-
+        ClearUIRoot();
         Init();
     }
+
+    private void ClearUIRoot()
+    {
+        Transform canvas = transform.Find("Canvas");
+        for(int i = 0; i < canvas.childCount; i++)
+        {
+            canvas.GetChild(i).gameObject.SetActive(false);
+        }
+        dynamicWnd.SetWndState();
+    }
+
 
     private void Init()
     {
@@ -39,6 +51,11 @@ public class GameRoot : MonoBehaviour
         //进入登录界面并加载UI
         login.EnterLogin();
         //加载后新场景后GameRoot被卸载掉了，但由于都挂载上面不能卸载
-
     }
+
+    public static void AddTips(string str)
+    {
+        Instance.dynamicWnd.AddTips(str);
+    }
+
 }
