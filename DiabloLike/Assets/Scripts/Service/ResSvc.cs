@@ -23,8 +23,7 @@ public class ResSvc : MonoBehaviour
     public void AsyncLoadScene(string SceneName,Action loaded)
     {
         //加载进度界面
-        GameRoot.Instance.loadingWnd.gameObject.SetActive(true);
-        GameRoot.Instance.loadingWnd.InitWnd();
+        GameRoot.Instance.loadingWnd.SetWndState();
 
         AsyncOperation sceneAsync=SceneManager.LoadSceneAsync(SceneName);
         //委托指向
@@ -39,7 +38,7 @@ public class ResSvc : MonoBehaviour
                 }
                 sceneAsync = null;
                 prgCB = null;
-                GameRoot.Instance.loadingWnd.gameObject.SetActive(false);
+                GameRoot.Instance.loadingWnd.SetWndState(false);
             }
         };
     }
@@ -50,6 +49,13 @@ public class ResSvc : MonoBehaviour
         {
             prgCB();
         }
+    }
+
+    public AudioClip AudioLoad(string path,bool Cache=false)
+    {
+        Debug.Log(path);
+        AudioClip au = Resources.Load<AudioClip>(path);
+        return au;
     }
 
 }

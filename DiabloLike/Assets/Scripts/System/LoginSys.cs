@@ -23,8 +23,8 @@ public class LoginSys : MonoBehaviour
         //TODO
         Debug.Log("EnterLogin Start...");
         ResSvc.Instance.AsyncLoadScene(Constants.SceneLogin, () => {
-            loginWnd.gameObject.SetActive(true);
-            loginWnd.InitWnd();
+            loginWnd.SetWndState();
+            AudioSvc.Instance.PlayBGAudio(Constants.BGLogin);
             }
         );
         //异步加载场景

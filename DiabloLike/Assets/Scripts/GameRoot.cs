@@ -29,6 +29,10 @@ public class GameRoot : MonoBehaviour
         //服务模块加载
         ResSvc res = GetComponent<ResSvc>();
         res.InitSvc();
+
+        AudioSvc au = GetComponent<AudioSvc>();
+        au.InitSvc();
+
         //登录注册系统初始化
         LoginSys login = GetComponent<LoginSys>();
         login.InitSys();

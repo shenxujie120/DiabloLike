@@ -6,30 +6,36 @@
 	功能：Nothing
 *****************************************************/
 
+using System;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class LoadingWnd : MonoBehaviour 
+public class LoadingWnd : WindowRoot 
 {
-    public TextMesh txtTips;
+    public TextMeshProUGUI txtTips;
     public Image ImgFg;
     public Image ImgPoint;
-    public TextMesh txtPrg;
+    public TextMeshProUGUI txtPrg;
 
     private float fgWidth;
 
-    public void InitWnd()
+    protected override void InitWnd()
     {
+        base.InitWnd();
         fgWidth = ImgFg.GetComponent<RectTransform>().sizeDelta.x;
         //txtTips.text = "我是最骄傲的狼……";
+        SetText(txtTips, "我是unity狗");
         ImgFg.fillAmount = 0;
         //txtPrg.text = "0%";
+        //SetText(txtPrg.GetComponent<Text>(), "0%");
         ImgPoint.transform.localPosition = new Vector3(-515f, 0, 0);
     }
 
     public void SetProgress(float prg)
     {
         //txtPrg.text = (int)(prg*100)+"%";
+        //SetText(txtPrg, (int)(prg * 100) + "%");
         ImgFg.fillAmount = prg;
         float posx = fgWidth * prg - 515;
         ImgPoint.GetComponent<RectTransform>().anchoredPosition = new Vector2(posx,0);
