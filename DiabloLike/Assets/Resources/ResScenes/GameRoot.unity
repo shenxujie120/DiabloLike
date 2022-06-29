@@ -24,7 +24,7 @@ RenderSettings:
   m_AmbientEquatorColor: {r: 0.114, g: 0.125, b: 0.133, a: 1}
   m_AmbientGroundColor: {r: 0.047, g: 0.043, b: 0.035, a: 1}
   m_AmbientIntensity: 1
-  m_AmbientMode: 0
+  m_AmbientMode: 3
   m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
   m_SkyboxMaterial: {fileID: 0}
   m_HaloStrength: 0.5
@@ -459,6 +459,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   loginWnd: {fileID: 2091949143}
+  createWnd: {fileID: 2746132347347672515}
 --- !u!114 &884588105
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -837,8 +838,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dd6b2936aff28e04084ab329b3c107e0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  iptAcct: {fileID: 0}
-  iptPwd: {fileID: 0}
+  iptAcct: {fileID: 5411159365444033844}
+  iptPwd: {fileID: 5411159365444033843}
   btnEnter: {fileID: 150609754}
   btnNotice: {fileID: 1888105144}
 --- !u!1001 &2174024964590125227
@@ -1095,6 +1096,23 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 7806753284454372635, guid: 598f26bea06684e43b6d9944082ad5a6, type: 3}
   m_PrefabInstance: {fileID: 2746132347347672512}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &2746132347347672514 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4282777383296975640, guid: 598f26bea06684e43b6d9944082ad5a6, type: 3}
+  m_PrefabInstance: {fileID: 2746132347347672512}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &2746132347347672515
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2746132347347672514}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c79363983b8600446b65cdba4bcff369, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &5411159365444033842
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1102,13 +1120,49 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1294067713}
     m_Modifications:
+    - target: {fileID: 5411159363683414099, guid: d6a4b9080ebe33f49a18c2a576a2313a, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5411159363683414099, guid: d6a4b9080ebe33f49a18c2a576a2313a, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5411159363683414099, guid: d6a4b9080ebe33f49a18c2a576a2313a, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 2091949143}
+    - target: {fileID: 5411159363683414099, guid: d6a4b9080ebe33f49a18c2a576a2313a, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5411159363683414099, guid: d6a4b9080ebe33f49a18c2a576a2313a, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: ClickLoginBtn
+      objectReference: {fileID: 0}
+    - target: {fileID: 5411159363683414099, guid: d6a4b9080ebe33f49a18c2a576a2313a, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: LoginWnd, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 5411159363683414099, guid: d6a4b9080ebe33f49a18c2a576a2313a, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 5411159363753726532, guid: d6a4b9080ebe33f49a18c2a576a2313a, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5411159365507193991, guid: d6a4b9080ebe33f49a18c2a576a2313a, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5411159365546835353, guid: d6a4b9080ebe33f49a18c2a576a2313a, type: 3}
       propertyPath: m_Name
       value: LoginWnd
       objectReference: {fileID: 0}
     - target: {fileID: 5411159365546835353, guid: d6a4b9080ebe33f49a18c2a576a2313a, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5411159365546835358, guid: d6a4b9080ebe33f49a18c2a576a2313a, type: 3}
       propertyPath: m_Pivot.x
@@ -1196,6 +1250,28 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d6a4b9080ebe33f49a18c2a576a2313a, type: 3}
+--- !u!114 &5411159365444033843 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5411159363691869959, guid: d6a4b9080ebe33f49a18c2a576a2313a, type: 3}
+  m_PrefabInstance: {fileID: 5411159365444033842}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2da0c512f12947e489f739169773d7ca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &5411159365444033844 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5411159363753726532, guid: d6a4b9080ebe33f49a18c2a576a2313a, type: 3}
+  m_PrefabInstance: {fileID: 5411159365444033842}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2da0c512f12947e489f739169773d7ca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &8975415873311037729
 PrefabInstance:
   m_ObjectHideFlags: 0

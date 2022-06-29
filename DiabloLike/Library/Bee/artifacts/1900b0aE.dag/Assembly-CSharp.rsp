@@ -359,6 +359,7 @@
 "Assets/Scripts/Service/ResSvc.cs"
 "Assets/Scripts/System/LoginSys.cs"
 "Assets/Scripts/SystemRoot.cs"
+"Assets/Scripts/UIWindow/CreateWnd.cs"
 "Assets/Scripts/UIWindow/DynamicWnd.cs"
 "Assets/Scripts/UIWindow/LoadingWnd.cs"
 "Assets/Scripts/UIWindow/LoginWnd.cs"

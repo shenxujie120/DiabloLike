@@ -12,6 +12,7 @@ public class LoginSys : SystemRoot
 {
     public static LoginSys Instance = null;
     public LoginWnd loginWnd;
+    public CreateWnd createWnd;
     public override void InitSys()
     {
         base.InitSys();
@@ -27,14 +28,17 @@ public class LoginSys : SystemRoot
                 loginWnd.SetWndState();
                 audioSvc.PlayBGAudio(Constants.BGLogin);
                 GameRoot.AddTips("Load Done");
-                GameRoot.AddTips("Load DoneX");
-                GameRoot.AddTips("Load DoneXX");
             }
         );
-        //异步加载场景
-        //显示加载进度
-        //加载完成后显示场景
+    }
 
+    public void RspLogin()
+    {
+        GameRoot.AddTips("成功登陆");
+        //打开角色创建
+        createWnd.SetWndState();
+        //关闭登录
+        loginWnd.SetWndState(false);
     }
 
 } 

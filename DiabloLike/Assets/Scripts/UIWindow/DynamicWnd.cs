@@ -53,7 +53,8 @@ public class DynamicWnd : WindowRoot
     private void SetTips(string txt)
     {
             SetActive(textMesh);
-            SetText(textMesh, txt);
+            textMesh.SetText(txt);
+            //SetText(textMesh, );
         //播放完成后关闭，动画监测结束
         AnimationClip clip = ani.GetClip("TipsShowAni");
         ani.Play();

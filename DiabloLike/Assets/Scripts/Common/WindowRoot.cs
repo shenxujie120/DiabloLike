@@ -69,12 +69,12 @@ public class WindowRoot : MonoBehaviour
 
     protected void SetText(TextMeshProUGUI txtMesh, string context="")
     {
-        txtMesh.GetComponent<TMP_Text>().text = context;
+        txtMesh.text = context;
     }
 
     protected void SetText(TextMeshProUGUI txtMesh, int num = 0)
     {
-        txtMesh.GetComponent<TMP_Text>().text = num.ToString();
+        txtMesh.text = num.ToString();
     }
 
     //激活与取消激活
